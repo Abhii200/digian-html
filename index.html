@@ -1,0 +1,849 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <!-- Basic -->
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <!-- Mobile Metas -->
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+    <!-- Site Metas -->
+    <meta name="keywords" content="" />
+    <meta name="description" content="" />
+    <meta name="author" content="" />
+
+    <title>CSD</title>
+
+
+    <!-- bootstrap core css -->
+    <link rel="stylesheet" type="text/css" href="css/bootstrap.css" />
+
+    <!-- font awesome style -->
+    <link href="css/font-awesome.min.css" rel="stylesheet" />
+
+    <!-- Custom styles for this template -->
+    <link href="css/style.css" rel="stylesheet" />
+    <!-- responsive style -->
+    <link href="css/responsive.css" rel="stylesheet" />
+    <style>
+        .center-container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100%;
+        }
+        
+        .scene3d {
+            perspective: 1000px;
+            width: 600px;
+            height: 340px;
+        }
+        
+        .object3d {
+            position: absolute;
+            width: inherit;
+            height: inherit;
+            transform-style: preserve-3d;
+        }
+        
+        .face3d {
+            position: absolute;
+            left: 165px;
+            top: 15px;
+        }
+        
+        #im1 {
+            transform: translateZ(150px);
+        }
+        
+        #im2 {
+            transform: translateZ(-150px) scaleX(-1);
+            /* Apply scaleX(-1) to correct inversion */
+        }
+        
+        .scene3d.begin {
+            perspective: 100000px;
+        }
+        
+        .scene3d.end {
+            perspective: 1000px;
+        }
+        
+        #obj1 {
+            animation: theRotate 4s linear infinite;
+        }
+        
+        @keyframes theRotate {
+            0% {
+                transform: rotateY(0deg);
+            }
+            100% {
+                transform: rotateY(360deg);
+            }
+        }
+        
+        .cube-container {
+            perspective: 800px;
+            width: 200px;
+            height: 200px;
+            margin: 0 auto;
+        }
+        
+        .cube {
+            width: 100%;
+            height: 100%;
+            position: relative;
+            transform-style: preserve-3d;
+            animation: spin 10s infinite linear;
+        }
+        
+        .face {
+            position: absolute;
+            width: 200px;
+            height: 200px;
+            background-color: rgba(0, 0, 0, 0.2);
+            border: 1px solid #ccc;
+        }
+        
+        .front {
+            transform: translateZ(100px);
+        }
+        
+        .back {
+            transform: rotateY(180deg) translateZ(100px);
+        }
+        
+        .left {
+            transform: rotateY(-90deg) translateZ(100px);
+        }
+        
+        .right {
+            transform: rotateY(90deg) translateZ(100px);
+        }
+        
+        .top {
+            transform: rotateX(90deg) translateZ(100px);
+        }
+        
+        .bottom {
+            transform: rotateX(-90deg) translateZ(100px);
+        }
+        
+        @keyframes spin {
+            0% {
+                transform: rotateY(0deg);
+            }
+            100% {
+                transform: rotateY(360deg);
+            }
+        }
+        
+        li {
+            font-size: 20px;
+        }
+        
+        table {
+            width: 80%;
+            /* Set the table width to 80% of the page */
+            margin: 0 auto;
+            /* Center the table on the page */
+            border-collapse: collapse;
+            background-image: url(images/bs.jpeg);
+            /* Replace 'your-image.jpg' with the URL or path to your background image */
+            background-size: cover;
+            border: 1px solid #ccc;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+            /* Add a subtle box shadow for 3D effect */
+        }
+        
+        tr,
+        td {
+            padding: 10px;
+            text-align: center;
+            font-size: 20px;
+            background: linear-gradient(rgba(255, 255, 255, 0.8), rgba(255, 255, 255, 0.8));
+            /* Add a background gradient */
+            border: 1px solid #ccc;
+            /* Add a border to the table cells */
+        }
+        
+        th {
+            background: linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2));
+            /* Add a darker background gradient for table headers */
+            font-size: 30px;
+            font-weight: bold;
+        }
+        
+        
+        
+        .animate-charcterS {
+          
+            text-transform: uppercase;
+            font-family: Italic;
+            background-image: linear-gradient( -225deg, #f3f334 0%,#1ad6e4 29%, #e3f023 67%, #f8f83f 100%);
+            background-size: auto auto;
+            background-clip: border-box;
+            background-size: 50% auto;
+            color: #fff;
+            background-clip: text;
+            text-fill-color: transparent;
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            animation: textclip 7s linear infinite;
+            display: inline-block;
+            font-size: 80px;
+        }
+        
+        
+        
+        @keyframes textclip {
+            to {
+                background-position: 50% center;
+            }
+        }
+        
+        .waviy {
+            position: relative;
+        }
+        
+        .waviy span {
+            position: relative;
+            display: inline-block;
+            font-size: 40px;
+            color: #090909;
+            text-transform: uppercase;
+            animation: flip 2s infinite;
+            animation-delay: calc(.2s * var(--i))
+        }
+        
+        @keyframes flip {
+            0%,
+            80% {
+                transform: rotateY(360deg)
+            }
+        }
+
+        @import url("https://fonts.googleapis.com/css?family=Roboto:700");
+
+        p {
+          text-shadow: 0 0 7px rgba(252, 35, 35, 0.3),
+            0 0 3px rgba(255, 255, 255, 0.3);
+        }
+        .new-container {
+          color: #180a74;
+          font-size: 2.26rem;
+          text-transform: uppercase;
+          
+          display: flex;
+          align-items: center;
+          justify-content: center;
+        }
+        
+        .new-animation {
+          height: 50px;
+          overflow: hidden;
+          margin-left: 1rem;
+        }
+        
+        .new-animation > div > div {
+          padding: 0.25rem  0.25rem;
+          height: 2.81rem;
+          margin-bottom: 2.81rem;
+          display: inline-block;
+        }
+        
+        .new-animation div:first-child {
+          animation: text-animation 7s infinite;
+        }
+        
+        .new-first div {
+            background-color: #FF9933;
+        }
+        .new-second div {
+          background-color: #ffffff;
+        }
+        .new-third div {
+          background-color: #138808;
+        }
+       
+        
+        @keyframes text-animation {
+          0% {
+            margin-top: 0;
+          }
+          10% {
+            margin-top: 0;
+          }
+          20% {
+            margin-top: -5.62rem;
+          }
+          30% {
+            margin-top: -5.62rem;
+          }
+          40% {
+            margin-top: -11.24rem;
+          }
+          60% {
+            margin-top: -11.24rem;
+          }
+          70% {
+            margin-top: -5.62rem;
+          }
+          80% {
+            margin-top: -5.62rem;
+          }
+          90% {
+            margin-top: 0;
+          }
+          100% {
+            margin-top: 0;
+          }
+        }
+        
+        @import url("https://fonts.googleapis.com/css2?family=Alumni+Sans:wght@400;600;700&display=swap");
+
+$blue: #2962ff;
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+
+
+.new-section {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  
+  font-size: 2em;
+  background: #212121;
+  color: #fff;
+  text-transform: uppercase;
+  gap: 30px;
+
+  h1 {
+    font-size: 2.5em;
+    text-decoration: underline;
+
+    @media (max-width: 768px) {
+      font-size: 1.3em;
+    }
+  }
+}
+
+.new-text-shadow {
+  font-style: italic;
+  text-transform: uppercase;
+  color: transparent;
+  -webkit-text-stroke: #fff;
+  -webkit-text-stroke-width: 1px;
+  text-shadow: 2px 2px 10px $blue;
+  transition: all 0.5s ease-in-out;
+  text-align: center;
+  letter-spacing: 0.2em;
+  animation: new-flicker 0.5s ease-in-out infinite alternate;
+
+  &:hover {
+    color: #fff;
+  }
+}
+
+.new-tags {
+  small {
+    @media (max-width: 768px) {
+      font-size: 0.5em;
+    }
+  }
+}
+
+@keyframes new-flicker {
+  0% {
+    opacity: 0.5;
+    text-shadow: 2px 2px 10px $blue;
+  }
+  100% {
+    opacity: 1;
+    text-shadow: 2px 2px 20px $blue;
+  }
+}
+
+        
+    </style>
+
+    
+    
+</head>
+
+<body >
+
+<div class="sub_page">
+    <div class="hero_area" >
+        <!-- header section strats -->
+        <header class="header_section">
+            <div class="container-fluid">
+                <nav class="navbar navbar-expand-lg custom_nav-container ">
+                   
+                        <span>
+                          <a href="https://www.srkrec.edu.in/csd.php">  <div class="col-md-12 text-center" style="  background-color: #5c119a; border-radius: 30%;">
+                                <h3 class="animate-charcterS">CSD </h3>
+                    
+                            </div></a>
+            </span>
+                    
+
+                    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class=""> </span>
+          </button>
+
+                    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                        <ul class="navbar-nav  ">
+                            <li class="nav-item active">
+                                <a class="nav-link" href="index.html">Home <span class="sr-only">(current)</span></a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="about.html"> About</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="service.html">Services</a>
+                            </li>
+                           
+                            <li class="nav-item">
+                                <a class="nav-link" href="login.php">Login </a>
+                            </li>
+                        </ul>
+                        <img src="IMAGES/T3.png" width="200" >
+                    </div>
+                </nav>
+            </div>
+        </header>
+        </div></div>
+        <br> 
+        <!DOCTYPE html>
+
+
+
+
+        <main class="new-container" style="background-color: #e42d2d; padding: 10px;">
+            <p>Hello 👋 CSDIANS.. </p>
+            <section class="new-animation" style="color: #ccc;">
+              <div class="new-first">
+                <div>GET NOTES</div>
+              </div>
+              <div class="new-second">
+                <div>GET SYLLABUS</div>
+              </div>
+              <div class="new-third">
+                <div>MAKE USE OF IT</div>
+              </div>
+              
+            </section>
+          </main><br>
+          
+        <div class="hero_area">
+        <!-- end header section -->
+        <!-- slider section -->
+        <section class="slider_section ">
+            <div id="customCarousel1" class="carousel slide" data-ride="carousel">
+                <div class="carousel-inner">
+                    <div class="carousel-item active">
+                        <div class="container ">
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <div class="img-box">
+                                        <img src="images/slider-img.png" alt="">
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="detail-box">
+                                        <h1>
+                                            Academic detail providers
+                                        </h1>
+                                        <p>
+                                            we can provide you 4years model papers and Syllabus
+                                        </p>
+                                        <div class="btn-box">
+                                            <a href="" class="btn1">
+                        Contact Us
+                      </a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="carousel-item ">
+                        <div class="container ">
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <div class="img-box">
+                                        <img src="images/slider-img.png" alt="">
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="detail-box">
+                                        <h1>
+                                           Here is the website specially for the Csdians to check their progress in the related course
+                                           and for permissions .</h1>
+                                       
+                                        <div class="btn-box">
+                                            <a href="http://www.mcr.org.in/csdnet/dashboard.php" class="btn1">
+                      CSD NET
+                      </a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="carousel-item " >
+                        <div class="container ">
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <div class="img-box">
+                                        <img src="images/slider-img.png" alt="">
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="detail-box">
+                                        <h1>
+                                           Made by CSD 2nd years (2022-2026)
+                                        </h1>
+                                      
+                                        <div class="btn-box">
+                                            <a href="about.html " class="btn1">
+                       ABOUT US
+                      </a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <ol class="carousel-indicators">
+                    <li data-target="#customCarousel1" data-slide-to="0" class="active"></li>
+                    <li data-target="#customCarousel1" data-slide-to="1"></li>
+                    <li data-target="#customCarousel1" data-slide-to="2"></li>
+                </ol>
+            </div>
+
+        </section>
+        <!-- end slider section -->
+    </div>
+    
+      
+   <br>
+    <section class="service_section layout_padding">
+        <div class="container"><a href="#tej">
+            <section class="new-section"><br>
+                <h1 class="new-text-shadow"> -- HERE YOUR MATERIALS -- </h1>
+                <div class="new-tags">
+                  <p class="new-text-shadow"><small>SELECT YEAR</small></p>
+                </div>
+              </section></a>
+            <div class="row" id="tej">
+                <a href="year1.php">
+                    <div class="col-md-6 col-lg-3">
+                        <div class="box">
+                            <div class="img-box">
+                                <img src="1st.jpeg" width="50%" alt="">                            </div>
+                            <div class="detail-box">
+                                <h5>
+                                    1st year
+                                </h5>
+    
+                            
+                                    <i class="fa fa-long-arrow-right" aria-hidden="true"></i>
+                                </a>
+                            </div>
+                        </div>
+                    </div></a><a href="year2.php">
+                <div class="col-md-6 col-lg-3">
+                    <div class="box">
+                        <div class="img-box">
+                            <img src="2nd.jpeg" width="100%" height="70%" alt="">
+                        </div>
+                        <div class="detail-box">
+                            <h5>
+                                2nd year
+                            </h5>
+
+                        
+                                <i class="fa fa-long-arrow-right" aria-hidden="true"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div></a> <a href="year3.php">
+                <div class="col-md-6 col-lg-3">
+                    <div class="box">
+                        <div class="img-box">
+                            <img src="3.jpeg" alt="">
+                        </div>
+                        <div class="detail-box">
+                            <h5>
+                                3rd year
+                            </h5>
+
+                         
+                                <i class="fa fa-long-arrow-right" aria-hidden="true"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div></a> <a href="year4.php">
+                <div class="col-md-6 col-lg-3">
+                    <div class="box">
+                        <div class="img-box">
+                            <img src="4.jpeg" alt="">
+                        </div>
+                        <div class="detail-box">
+                            <h5>
+                                4th year
+                            </h5>
+
+                                <i class="fa fa-long-arrow-right" aria-hidden="true"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div></a>
+                <div class="col-md-6 col-lg-3">
+                    <div class="box">
+                        <div class="img-box">
+                            <img src="all.jpeg" width="100%" height="70%" alt="">
+                        </div>
+                        <div class="detail-box">
+                            <h5>
+                                ALL SEMESTERS PREVIOUS QUESTION PAPERS
+                            </h5>
+
+                            <a href="service.html">
+                                <span>
+                Read More
+              </span>
+
+                            </a>
+                        </div>
+                    </div>
+                </div> <a href="links.html">
+                <div class="col-md-6 col-lg-3">
+                    <div class="box">
+                        <div class="img-box">
+                            <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAMoAAAB+CAMAAABS4H75AAAAolBMVEX////+AAAjIyMAAAAeHh4YGBjm5uY2NjYQEBBGRkZsbGwaGhq5uLfu7u4UFBTx8fHZ2dnCwsIpJicrKysxMTH4lJOXl5dbW1tjY2P5+fl6enrKysoJCQn8t7ehoaE/Pz+wsLBSUlKEhIT7y8v7qKj8GRn5ZGSMjIz+8PD85eT82tr809P5cXH8Q0P8NDT8KSn9WVn5nZz4fHv8TUz5jIz7wcC3X0vpAAAG0ElEQVR4nO2aa3eqOhCGKbdGoojHqgQoVWytl9ZerP//r53MJCDaolTc7nPWmvdT5DKZh0wyQ9AwSCQSiUQikUgkEolEIpFIJBKJRCKRSCQSiUQi/Xck5vOF1HK5Wq2muVar5VIenM/nf9u9OppP778+X2az9/fNq9R6/fb29qQlm+u1PLjZvM9ms5fPwf20+7f9rdJ0dvNrzZZXcq7bHoPqXfzyexDQV6k7lNC/hPp5umN9YVnfL3JvLVAdEHHGkCi9FDY8s9/v26n+9WzDr+x013jhvsS3i9yWbZpmLZSvc0lubj5yG23LtM0kUn4Iz7dt04proMjbDtQEZXE+yc3rIu/Okr05k84v+36G28pqhjJogHJzr42IkS+7Yy7+iBm0w3oociAKDLshyqYJSjFbhvB8dUyNsT2u0XdmJXJCcyThCc7uBijirQnKTW6m50B3z9iOEoi2oAaKQCE699SP7xfVRlk+XQTFfZD9OS1s92WTjzo1UJTaONG8qtO1UbaNSG6KSibkeX9d8IzVWIovjfLYDGWa20lxgkBU9RClfX2UygWs3nKQL2FqOU7Ghl5hfR1fIpC6GIp7aEsecIsflQlyMH+pMY2KJGk4tg6rEYcUg8fikDu+75uh9qA78TwvjKD3eARN7wAlCuXRESyELjYn3RJK3AJbabEyxKEtrTvmSFv/rESRVeb7SZRdHQbrFg+F0YEFwBrCiGQWUxmDWcqBruUzlpgqDJlsOgcod3DU6slW0E8Y863ODiW1YJW0rUh3mFs3GfZ2HMWY359C+SxQYIrYD64Rm/mkwVxjYga0VZrBFcG+K2aU/c8Byi16jSiquUOJE51LLTUIqbJuo3W4Q1RWxQO8QQyO551dRRncSatJjAmSt2RgxNhXcmf62JuohcKrUGzbYgqG4bAEAGGz1i1a78NzryyLB9rF1dHCeVagdEMfc/xQBloCcyaE8U+iIJigf8NmKKYVxT08xrHUwyFnqRuMIOy4nF7zyukwKJxcreugaAYBRGycuy0jzggwm8tp1AQFnw5eaffhfghcJ+xq68mwHoohHiujrIQS+xBZrsz16GxPAcAZBRU0QoGWITBmodTrFHkYj0HQ1UKRbwJVU6qEIiB4E3hI9kQPko5rbusYaIKCfbB8WcCJyKDmEzBHfTk+88pMuIcia7XZj1nmvXQJThZIkFhWRqwoMCeOdqAxijo/1utXgigtruZPzVExqsqCMgqsXTY8Iyz2PT+f7Aa+zFjjC6C08KGkuqRgwwKlVRtFbCumfinAVPyaulvhOX8ARVmSKFlSoMCYw/JSD2VZmX3KKF0MJNkDeCVCfoCSXgAFF3iwhOHL0jx8a6N8VhdjZZT8VR0z+zVQ/CiWgkIJUU6mSPF4rKrcQ+n5WEv8E1wJxcR3aFvnr1OFy4lkv4/iqmw86l4LpRCm4qPl5JFB0/oso2B9r1b766BwpmXdnkARg5NvLF97KLgA47pyFRTutQuJY69exvb1FMhh9rkyCkv3eq98IX6ptZV8v2eshGL8kbwyyVPkLq/s9FHH4WptK1GiXbafXAzlIS9chkW2l+/3rtr/P/meeFyLSpQM2lglKQeSS9RgTl5OtotyUr4YS8GquWq2pScqUdIEkxg0Vea8QGW8K/KD3WYbbCpAZWzML7PR+h0Fy3A+yh2wW27uih3k/n9DUQEEsxnfrw9R4uJRoCUf74FykuH3kCOviKf1Xo2i3O73dEFeGh+YQEHf/gkFVyh/IgzXS8w9lCTrGC6+WqsUDEuJ3Y81ngrkM7/eKX1UoxghOMMfnqM+OtUunrppet5d4vyEorZRkjBqqZ2h0jYFa4UtvFuFFe6ZO60sw0BkEJPGsgnK8giK6ysXsDBjamdcuWo6nHlD9gNKgGNhcofftVkZxX4wOVe7RxbuR3ZxhZfWcchGKhDO/hR5WLZIFFZe7cdW/hXITG7V5lVwp4bFsQIIjG8oIlQssOBaZRRrmFuz9MZ6YPm5detB77Yuz54t68N/JIQJ59wqElev72CFlDijfGe3ZyZwRJJ1LM59U6HIuxK1Z+zewvmEy5lv+9IWojDZ6BnjPpzJP3hKlomDtpgTFR9AljUKlJ+02U8qUnEPtNuiFr3nLIqytPSFNRhmUTYGd+BSPOGW7xKpPJ+62hiUVl20Kqd6J82y5165u2Emj6TlLfHFWR+JP+r9S+T7d6wfvmz96vwJrT5eZrPN6+v67elIznx6elu/bjaz2efjtf5Lcabmi8VyNZ1ut/dKj0r61/12O52ulovF/+I/OyQSiUQikUgkEolEIpFIJBKJRCKRSCQSiUQika6ofwHmwqYLqnPPsAAAAABJRU5ErkJggg=="
+                                width="100%" height="70%" alt="">
+                        </div>
+                        <div class="detail-box">
+                            <h5>
+                                VIDEO LINKS FOR PROGRAMM LANGUAGES
+                            </h5>
+
+                           
+                          
+                                <i class="fa fa-long-arrow-right" aria-hidden="true"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div></a>
+            </div>
+
+            <div class="btn-box">
+                <a href="">
+          View More
+        </a>
+            </div>
+        </div>
+    </section>
+    <!-- about section -->
+
+    <section class="about_section layout_padding">
+        <div class="container  ">
+            <div class="row">
+                <div class="col-md-6">
+                    <div class="detail-box">
+                        <div class="heading_container">
+                            <h2>
+                                CSD... </h2>
+                        </div>
+                        <p>
+                            Helps you to get yor academic needs </p>
+                        <a href="http://www.mcr.org.in/csdnet/dashboard.php">CSD NET</a><br>
+                        <a  href="service.html">
+              Read More
+            </a>
+                    </div>
+                </div>
+                <div class="col-md-6 ">
+                    <div class="img-box">
+                        <img src="https://www.srkrec.edu.in/img/csd/csd_brochure_front.jpg" alt=" ">
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- end about section -->
+
+    <!-- case section -->
+
+ 
+
+    
+
+    <!-- end case section -->
+
+    <!-- client section -->
+   
+    <!-- end client section -->
+
+
+
+    <!-- contact section -->
+
+    <section class="contact_section layout_padding">
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-md-5 col-lg-4 offset-md-1">
+                    <div class="form_container">
+                        <div class="heading_container">
+                            <h2>
+                                Request A Call back
+                            </h2>
+                        </div>
+                        <form action="">
+                            <div>
+                                <input type="text" placeholder="Full Name " />
+                            </div>
+                            <div>
+                                <input type="email" placeholder="Email" />
+                            </div>
+                            <div>
+                                <input type="text" placeholder="Phone number" />
+                            </div>
+                            <div>
+                                <input type="text" class="message-box" placeholder="Message" />
+                            </div>
+                            <div class="d-flex ">
+                                <button type="button">
+                  SEND
+                </button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-7 px-0">
+                    <div class="map_container">
+                        <div class="map">
+                            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3824.6619151182713!2d81.4938112734978!3d16.54315722657957!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3a362d5e7ef94f99%3A0x3a2b78f9b48493fe!2sSRKR%20Engineering%20College!5e0!3m2!1sen!2sin!4v1698750030626!5m2!1sen!2sin" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- end contact section -->
+
+    <div class="footer_container">
+        <!-- info section -->
+        <section class="info_section ">
+            <div class="container ">
+                <div class="row ">
+                    <div class="col-md-6 col-lg-3 ">
+                        <div class="info_detail ">
+                            <h4>
+                                we are here to help
+                            </h4>
+                            <p>
+                                To get your syllabus.<br> To get your model papers.
+                            </p>
+                        </div>
+                    </div>
+                    <div class="col-md-6 col-lg-2 mx-auto ">
+                        <div class="info_link_box ">
+                            <h4>
+                                Links
+                            </h4>
+                            <div class="info_links ">
+                                <a class=" " href="index.html ">
+                  Home
+                </a>
+                                <a class=" " href="about.html ">
+                  About
+                </a>
+                                <a class=" " href="service.html ">
+                  Services
+                </a>
+                                <a class=" " href="contact.html ">
+                  Contact Us
+                </a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class=" ">
+                        <div class="info_contact ">
+                            <h4>
+                                Address
+                            </h4>
+                            <div class="contact_link_box ">
+
+                                <a href="tel:  9347923953">
+                                    <i class="fa fa-phone " aria-hidden="true "></i>
+                                    <span>
+                    Call +91 9347923953
+                  </span>
+                                </a>
+                                <a href="mailto:bvst27@gmail.com">
+                                    <i class="fa fa-envelope " aria-hidden="true "></i>
+                                    <span>
+                    bvst27@gmail.com
+                  </span>
+                                </a>
+                            </div>
+                        </div>
+                        <div class="info_social ">
+                            <a href=" ">
+                                <i class="fa fa-facebook " aria-hidden="true "></i>
+                            </a>
+                            <a href=" ">
+                                <i class="fa fa-twitter " aria-hidden="true "></i>
+                            </a>
+                            <a href=" ">
+                                <i class="fa fa-linkedin " aria-hidden="true "></i>
+                            </a>
+                            <a href=" ">
+                                <i class="fa fa-instagram " aria-hidden="true "></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+
+
+        <!-- end info section -->
+
+        <!-- footer section -->
+     
+        <!-- footer section -->
+    </div>
+
+    <!-- jQery -->
+    <script src="js/jquery-3.4.1.min.js"></script>
+    <!-- popper js -->
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous">
+    </script>
+    <!-- bootstrap js -->
+    <script src="js/bootstrap.js"></script>
+    <script src="js/custom.js"></script>
+    <!-- Google Map -->
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCh39n5U-4IoWpsVGUHWdqB6puEkhRLdmI&callback=myMap"></script>
+    <!-- End Google Map -->
+
+</body>
+
+</html>

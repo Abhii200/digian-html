@@ -1,0 +1,404 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <!-- Basic -->
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <!-- Mobile Metas -->
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+    <!-- Site Metas -->
+    <meta name="keywords" content="" />
+    <meta name="description" content="" />
+    <meta name="author" content="" />
+
+    <title>Digian</title>
+
+
+    <!-- bootstrap core css -->
+    <link rel="stylesheet" type="text/css" href="css/bootstrap.css" />
+
+    <!-- font awesome style -->
+    <link href="css/font-awesome.min.css" rel="stylesheet" />
+
+    <!-- Custom styles for this template -->
+    <link href="css/style.css" rel="stylesheet" />
+    <!-- responsive style -->
+    <link href="css/responsive.css" rel="stylesheet" />
+<STYle> 
+    
+        
+    .animate-charcterS {
+        text-transform: uppercase;
+        background-image: linear-gradient( -225deg, #4ba2ea 0%,#f5af16 29%, #46c5d9 67%, #54cbec 100%);
+        background-size: auto auto;
+        background-clip: border-box;
+        background-size: 50% auto;
+        color: #fff;
+        background-clip: text;
+        text-fill-color: transparent;
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        animation: textclip 7s linear infinite;
+        display: inline-block;
+        font-size: 60px;
+    }
+    
+    
+    
+    @keyframes textclip {
+        to {
+            background-position: 50% center;
+        }
+    }
+    
+    .waviy {
+        position: relative;
+    }
+    
+    .waviy span {
+        position: relative;
+        display: inline-block;
+        font-size: 40px;
+        color: #090909;
+        text-transform: uppercase;
+        animation: flip 2s infinite;
+        animation-delay: calc(.2s * var(--i))
+    }
+    
+    @keyframes flip {
+        0%,
+        80% {
+            transform: rotateY(360deg)
+        }
+    }
+    @import url("https://fonts.googleapis.com/css2?family=Alumni+Sans:wght@400;600;700&display=swap");
+
+    $blue: #2962ff;
+    
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+    
+    
+    
+    .new-section {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      
+      font-size: 2em;
+      background: #521198;
+      color: #fff;
+      text-transform: uppercase;
+      gap: 30px;
+    
+      h1 {
+        font-size: 2.5em;
+        text-decoration: underline;
+    
+        @media (max-width: 768px) {
+          font-size: 1.3em;
+        }
+      }
+    }
+    
+    .new-text-shadow {
+      font-style: italic;
+      text-transform: uppercase;
+      color: transparent;
+      -webkit-text-stroke: #fff;
+      -webkit-text-stroke-width: 1px;
+      text-shadow: 2px 2px 10px $blue;
+      transition: all 0.5s ease-in-out;
+      text-align: center;
+      letter-spacing: 0.2em;
+      animation: new-flicker 0.5s ease-in-out infinite alternate;
+    
+      &:hover {
+        color: #fff;
+      }
+    }
+    
+    .new-tags {
+      small {
+        @media (max-width: 768px) {
+          font-size: 0.5em;
+        }
+      }
+    }
+    
+    @keyframes new-flicker {
+      0% {
+        opacity: 0.5;
+        text-shadow: 2px 2px 10px $blue;
+      }
+      100% {
+        opacity: 1;
+        text-shadow: 2px 2px 20px $blue;
+      }
+    }
+    </STYle>
+</head>
+
+<body class="sub_page">
+
+    <div class="hero_area">
+        <!-- header section strats -->
+        <header class="header_section">
+            <div class="container-fluid">
+                <nav class="navbar navbar-expand-lg custom_nav-container ">
+                    <a class="navbar-brand" href="index.html">
+                        <span><div class="col-md-12 text-center">
+                            <h3 class="animate-charcterS">GET YOUR NOTES AND SYLLABUS </h3>
+                
+                        </div>
+              
+            </span>
+                    </a>
+
+                    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class=""> </span>
+          </button>
+
+                    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                        <ul class="navbar-nav  ">
+                            <li class="nav-item active">
+                                <a class="nav-link" href="index.html">Home <span class="sr-only">(current)</span></a>
+                            </li>
+                           
+                        </ul>
+                      
+                    </div>
+                </nav>
+            </div>
+        </header>
+        <!-- end header section -->
+    </div>
+
+    <!-- service section -->
+    <section class="service_section layout_padding">
+        <div class="container"><a href="#tej">
+            <section class="new-section" ><br>
+                <h1 class="new-text-shadow"> -- HERE YOUR MATERIALS -- </h1>
+                <div class="new-tags">
+                  <p class="new-text-shadow"><small>SELECT YEAR</small></p>
+                </div>
+              </section></a>
+            <div class="row" id="tej">
+                <a href="year1.php">
+                    <div class="col-md-6 col-lg-3">
+                        <div class="box">
+                            <div class="img-box">
+                                <img src="1st.jpeg" width="50%" alt="">                            </div>
+                            <div class="detail-box">
+                                <h5>
+                                    1st year
+                                </h5>
+    
+                            
+                                    <i class="fa fa-long-arrow-right" aria-hidden="true"></i>
+                                </a>
+                            </div>
+                        </div>
+                    </div></a><a href="year2.php">
+                <div class="col-md-6 col-lg-3">
+                    <div class="box">
+                        <div class="img-box">
+                            <img src="2nd.jpeg" width="100%" height="70%" alt="">
+                        </div>
+                        <div class="detail-box">
+                            <h5>
+                                2nd year
+                            </h5>
+
+                        
+                                <i class="fa fa-long-arrow-right" aria-hidden="true"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div></a> <a href="year3.php">
+                <div class="col-md-6 col-lg-3">
+                    <div class="box">
+                        <div class="img-box">
+                            <img src="3.jpeg" alt="">
+                        </div>
+                        <div class="detail-box">
+                            <h5>
+                                3rd year
+                            </h5>
+
+                         
+                                <i class="fa fa-long-arrow-right" aria-hidden="true"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div></a> <a href="year4.php">
+                <div class="col-md-6 col-lg-3">
+                    <div class="box">
+                        <div class="img-box">
+                            <img src="4.jpeg" alt="">
+                        </div>
+                        <div class="detail-box">
+                            <h5>
+                                4th year
+                            </h5>
+
+                                <i class="fa fa-long-arrow-right" aria-hidden="true"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div></a>
+                <div class="col-md-6 col-lg-3">
+                    <div class="box">
+                        <div class="img-box">
+                            <img src="all.jpeg" width="100%" height="70%" alt="">
+                        </div>
+                        <div class="detail-box">
+                            <h5>
+                                ALL SEMESTERS PREVIOUS QUESTION PAPERS
+                            </h5>
+
+                            <a href="service.html">
+                                <span>
+                Read More
+              </span>
+
+                            </a>
+                        </div>
+                    </div>
+                </div> <a href="links.html">
+                <div class="col-md-6 col-lg-3">
+                    <div class="box">
+                        <div class="img-box">
+                            <img src="data:image/png;base64,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"
+                                width="100%" height="70%" alt="">
+                        </div>
+                        <div class="detail-box">
+                            <h5>
+                                VIDEO LINKS FOR PROGRAMM LANGUAGES
+                            </h5>
+
+                           
+                          
+                                <i class="fa fa-long-arrow-right" aria-hidden="true"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div></a>
+            </div>
+
+            <div class="btn-box">
+                <a href="">
+          View More
+        </a>
+            </div>
+        </div>
+    </section>
+    <!-- end service section -->
+
+
+    <div class="footer_container">
+        <!-- info section -->
+        <section class="info_section ">
+            <div class="container ">
+                <div class="row ">
+                    <div class="col-md-6 col-lg-3 ">
+                        <div class="info_detail ">
+                            <h4>
+                                we are here to help
+                            </h4>
+                            <p>
+                                To get your syllabus.<br> To get your model papers.
+                            </p>
+                        </div>
+                    </div>
+                    <div class="col-md-6 col-lg-2 mx-auto ">
+                        <div class="info_link_box ">
+                            <h4>
+                                Links
+                            </h4>
+                            <div class="info_links ">
+                                <a class=" " href="index.html ">
+                  Home
+                </a>
+                                <a class=" " href="about.html ">
+                  About
+                </a>
+                                <a class=" " href="service.html ">
+                  Services
+                </a>
+                                <a class=" " href="contact.html ">
+                  Contact Us
+                </a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class=" ">
+                        <div class="info_contact ">
+                            <h4>
+                                Address
+                            </h4>
+                            <div class="contact_link_box ">
+
+                                <a href="tel:  9347923953">
+                                    <i class="fa fa-phone " aria-hidden="true "></i>
+                                    <span>
+                    Call +91 9347923953
+                  </span>
+                                </a>
+                                <a href="mailto:bvst27@gmail.com">
+                                    <i class="fa fa-envelope " aria-hidden="true "></i>
+                                    <span>
+                    bvst27@gmail.com
+                  </span>
+                                </a>
+                            </div>
+                        </div>
+                        <div class="info_social ">
+                            <a href=" ">
+                                <i class="fa fa-facebook " aria-hidden="true "></i>
+                            </a>
+                            <a href=" ">
+                                <i class="fa fa-twitter " aria-hidden="true "></i>
+                            </a>
+                            <a href=" ">
+                                <i class="fa fa-linkedin " aria-hidden="true "></i>
+                            </a>
+                            <a href=" ">
+                                <i class="fa fa-instagram " aria-hidden="true "></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+
+
+        <!-- end info section -->
+
+        <!-- footer section -->
+     
+        <!-- footer section -->
+    </div>
+
+    <!-- jQery -->
+    <script src="js/jquery-3.4.1.min.js"></script>
+    <!-- popper js -->
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous">
+    </script>
+    <!-- bootstrap js -->
+    <script src="js/bootstrap.js"></script>
+    <script src="js/custom.js"></script>
+    <!-- Google Map -->
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCh39n5U-4IoWpsVGUHWdqB6puEkhRLdmI&callback=myMap"></script>
+    <!-- End Google Map -->
+
+</body>
+
+</html>
